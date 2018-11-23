@@ -1,0 +1,5 @@
+// the configured options and settings for Smurfs
+#define Smurfs_VERSION_MAJOR @Smurfs_VERSION_MAJOR@
+#define Smurfs_VERSION_MINOR @Smurfs_VERSION_MINOR@
+
+#cmakedefine SMURFS_TEST
