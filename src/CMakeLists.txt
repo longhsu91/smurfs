@@ -1,6 +1,7 @@
 
 set(${PROJECT_NAME}_sources
     list.c
+    stack.c
 )
 
 add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_sources})
