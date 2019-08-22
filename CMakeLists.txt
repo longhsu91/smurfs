@@ -7,8 +7,15 @@ include_directories(./include)
 # find config.h
 include_directories("${PROJECT_BINARY_DIR}")
 
+# debug
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 # sub dir
-add_subdirectory(./src)
+add_subdirectory(utils)
+add_subdirectory(sort)
+add_subdirectory(algo)
 
 # intall dir
 SET(CMAKE_INSTALL_PREFIX /usr/local/smurfs)
@@ -16,11 +23,6 @@ SET(CMAKE_INSTALL_PREFIX /usr/local/smurfs)
 # version number
 set(Smurfs_VERSION_MAJOR 1)
 set(Smurfs_VERSION_MINOR 0)
-
-# debug
-set(CMAKE_BUILD_TYPE "Debug")
-set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
-set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 # configure a header file to pass some of CMake settings to source file
 configure_file(
